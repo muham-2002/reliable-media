@@ -1,10 +1,19 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 import { Cpu, Zap, Target, ArrowRight, Brain, Database, Star, Users, Rocket, Award, Filter, Send, BarChart, PieChart, TrendingUp } from "lucide-react"
 import Footer from "../footer"
 import Navbar from "../navbar"
 import ContactForm from "../ContactForm"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import { buttonVariants } from "@/components/ui/button"
+
 
 export default function LandingPage() {
   return (
@@ -23,13 +32,13 @@ export default function LandingPage() {
                 </p>
               </div>
               <div className="space-x-4">
-                <Button className="bg-purple-600 text-white hover:bg-purple-700">
+                <a className={cn(buttonVariants({ variant: "default" }), "bg-purple-600 text-white hover:bg-purple-700" )} href="#contact">
                   Start Your AI Journey
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button variant="outline" className="bg-white text-purple-900 hover:bg-gray-100">
+                </a>
+                <a className={cn(buttonVariants({ variant: "outline" }), "bg-white text-purple-900 hover:bg-gray-100")} href="#process">
                   See How It Works
-                </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -208,6 +217,43 @@ export default function LandingPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+        <section id="faq" className="w-full py-12 md:py-24 lg:py-32 bg-white">
+          <div className="container px-4 md:px-6 mx-auto">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-purple-900">Frequently Asked Questions</h2>
+            <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
+              <AccordionItem value="item-1" >
+                <AccordionTrigger className="text-left">How does AI improve lead generation?</AccordionTrigger>
+                <AccordionContent>
+                  AI enhances lead generation by analyzing vast amounts of data to identify patterns and predict which leads are most likely to convert. This results in higher quality leads, improved targeting, and increased conversion rates.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger className="text-left">Is my data safe with Reliable Media?</AccordionTrigger>
+                <AccordionContent>
+                  Absolutely. We prioritize data security and comply with all relevant data protection regulations. Our systems use state-of-the-art encryption and security measures to ensure your data remains confidential and protected.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-left">How long does it take to see results?</AccordionTrigger>
+                <AccordionContent>
+                  While results can vary, most of our clients see significant improvements within the first month. As our AI continues to learn and optimize, results typically improve over time, with many clients experiencing peak performance after 3-6 months.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4">
+                <AccordionTrigger className="text-left">Can Reliable Media integrate with our existing CRM?</AccordionTrigger>
+                <AccordionContent>
+                  Yes, our platform is designed to integrate seamlessly with most major CRM systems. We offer custom integrations to ensure our AI-driven lead generation complements your existing workflows and processes.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-5">
+                <AccordionTrigger className="text-left">What makes Reliable Media different from other lead generation services?</AccordionTrigger>
+                <AccordionContent>
+                  Our unique combination of advanced AI technology, industry-specific expertise, and a proven track record sets us apart. We don't just provide leads; we deliver highly qualified, conversion-ready prospects tailored to your specific industry and business needs.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </section>
         <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-purple-900 to-indigo-900">

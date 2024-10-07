@@ -57,6 +57,9 @@ export default function Navbar() {
                     <a className="text-base font-medium hover:underline text-gray-800 md:text-gray-100" href="#metrics" onClick={closeMenu}>
                         Metrics
                     </a>
+                    <a className="text-base font-medium hover:underline text-gray-800 md:text-gray-100" href="#faq" onClick={closeMenu}>
+                        FAQ
+                    </a>
                     <a className="text-base font-medium hover:underline text-gray-800 md:text-gray-100" href="#contact" onClick={closeMenu}>
                         Contact
                     </a>
