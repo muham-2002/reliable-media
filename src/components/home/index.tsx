@@ -1,34 +1,19 @@
+'use client'
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Cpu, Zap, Target, ArrowRight, Brain, Database, Star, Users, Rocket, Award, Filter, Send, MapPin, Mail, BarChart, PieChart, TrendingUp } from "lucide-react"
+import { Cpu, Zap, Target, ArrowRight, Brain, Database, Star, Users, Rocket, Award, Filter, Send, BarChart, PieChart, TrendingUp } from "lucide-react"
+import Footer from "../footer"
+import Navbar from "../navbar"
+import ContactForm from "../ContactForm"
 
 export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-800">
-      <header className="px-4 lg:px-6 h-14 flex items-center">
-        <a className="flex items-center justify-center" href="#home">
-          <Cpu className="h-6 w-6 text-purple-400" />
-          <span className="ml-2 text-2xl font-bold text-white">Reliable Media</span>
-        </a>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
-          <a className="text-sm font-medium hover:underline text-gray-100" href="#services">
-            Services
-          </a>
-          <a className="text-sm font-medium hover:underline text-gray-100" href="#about">
-            About
-          </a>
-          <a className="text-sm font-medium hover:underline text-gray-100" href="#process">
-            Process
-          </a>
-          <a className="text-sm font-medium hover:underline text-gray-100" href="#metrics">
-            Metrics
-          </a>
-          <a className="text-sm font-medium hover:underline text-gray-100" href="#contact">
-            Contact
-          </a>
-        </nav>
-      </header>
+      <Navbar />
       <main className="flex-1">
         <section id="home" className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
           <div className="container px-4 md:px-6">
@@ -241,16 +226,7 @@ export default function LandingPage() {
                 </p>
               </div>
               <div className="w-full max-w-sm space-y-2">
-                <form className="space-y-4">
-                  <Input className="bg-white text-purple-900" placeholder="Your Name" type="text" required />
-                  <Input className="bg-white text-purple-900" placeholder="Your Email" type="email" required />
-                  <Input className="bg-white text-purple-900" placeholder="Your Company" type="text" required />
-                  <Textarea className="bg-white text-purple-900" placeholder="Your Message" required />
-                  <Button className="w-full bg-purple-600 text-white hover:bg-purple-700">
-                    Send Message
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </form>
+                <ContactForm />
                 <p className="text-xs text-gray-300">
                   By contacting us, you agree to our Terms of Service and Privacy Policy.
                 </p>
@@ -259,39 +235,8 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
-      <footer className="w-full py-6 px-4 md:px-6 border-t border-purple-300 bg-indigo-900">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-            <div className="flex flex-col space-y-2">
-              <p className="text-sm text-gray-300">© 2024 Reliable Media. All rights reserved.</p>
-              <nav className="flex gap-4">
-                <a className="text-xs hover:underline underline-offset-4 text-gray-300" href="#terms">
-                  Terms of Service
-                </a>
-                <a className="text-xs hover:underline underline-offset-4 text-gray-300" href="#privacy">
-                  Privacy Policy
-                </a>
-              </nav>
-            </div>
-            <div className="flex flex-col space-y-2 text-sm text-gray-300">
-              <div className="flex items-center">
-                <MapPin className="h-4 w-4 mr-2 text-purple-400" />
-                <p>15021 Ventura Blvd., #789, Sherman Oaks, CA 91403</p>
-              </div>
-              <div className="flex items-center">
-                <Mail className="h-4 w-4 mr-2 text-purple-400" />
-                <a href="mailto:info@reliablemedia.co" className="hover:underline">info@reliablemedia.co</a>
-              </div>
-            </div>
-            <div className="flex justify-start md:justify-end">
-              <a className="flex items-center justify-center" href="#home">
-                <Cpu className="h-6 w-6 text-purple-400" />
-                <span className="ml-2 text-xl font-bold text-white">Reliable Media</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
+      <ToastContainer />
     </div>
   )
 }
