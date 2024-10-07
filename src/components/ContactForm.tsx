@@ -3,7 +3,6 @@
 import { useState } from "react"
 import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -21,19 +20,19 @@ const ContactForm = () => {
       toast.error('Please complete all form fields first.')
     } else {
       emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
         {
           user_name,
           user_email,
           user_company,
           user_message
         },
-        "YOUR_PUBLIC_KEY"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
       ).then(function (response) {
-        toast.success('Your message was sent successfully!')
+        toast.success('Form submitted successfully!')
       }, function (error) {
-        toast.error('Failed to send your message. Please try again.')
+        toast.error('Failed to submit form. Please try again.')
       });
       setUserName("")
       setUserEmail("")

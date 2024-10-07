@@ -1,10 +1,6 @@
 'use client'
 
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Cpu, Zap, Target, ArrowRight, Brain, Database, Star, Users, Rocket, Award, Filter, Send, BarChart, PieChart, TrendingUp } from "lucide-react"
 import Footer from "../footer"
 import Navbar from "../navbar"
@@ -236,7 +232,6 @@ export default function LandingPage() {
         </section>
       </main>
       <Footer />
-      <ToastContainer />
     </div>
   )
 }
