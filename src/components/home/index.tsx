@@ -11,7 +11,7 @@ export default function LandingPage() {
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-800">
       <Navbar />
       <main className="flex-1">
-        <section id="home" className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+        <section id="home" className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-contain" style={{ backgroundImage: 'url(/hero.png)' }}>
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
