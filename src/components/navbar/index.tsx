@@ -1,4 +1,5 @@
 import { Cpu, Menu, X } from "lucide-react"
+import Image from "next/image"
 import { useState, useEffect } from "react"
 
 export default function Navbar() {
@@ -29,14 +30,22 @@ export default function Navbar() {
     return (
         <div className="relative">
             <div className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={toggleMenu}></div>
-            <header className="px-4 lg:px-6 h-14 flex items-center relative z-50">
+            <header className="px-4 lg:px-10 pt-3 h-[6rem] flex items-center relative z-50">
                 <a className="flex items-center justify-center" href="#home">
-                    <Cpu className="h-6 w-6 text-purple-400" />
-                    <span className="ml-2 text-2xl font-bold text-white">Reliable Media</span>
+                    {/* <Cpu className="h-6 w-6 text-purple-400" /> */}
+                    <Image
+                            src="/logo1.png"
+                            alt="Delivery in action"
+                            width={100}
+                            height={100}
+                            className="rounded-lg w-[13rem] h-auto"
+                        />
+
+                    {/* <span className="ml-2 text-2xl font-bold text-white">Reliable Media</span> */}
                 </a>
                 <nav className={`
           ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}
-          fixed top-14 right-0 bottom-0 w-[70%] 
+          fixed top-16 right-0 bottom-0 w-[70%] 
           bg-white md:bg-transparent
           flex flex-col md:flex-row
           items-center justify-start md:justify-end
