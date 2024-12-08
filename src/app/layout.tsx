@@ -31,7 +31,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} p-0`}
       >
         <ToastContainer />
-        {children}
       </body>
     </html>
   );
